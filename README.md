@@ -1,14 +1,14 @@
 # Deployxa Rust Starter
 
-Production-ready **Rust** template optimized for AI-assisted development and Deployxa Cloud.
+Production-ready Rust template optimized for AI-assisted development and Deployxa Cloud.
 
 ---
 
 ## Why This Template?
 
-This repository is part of the official Deployxa Templates ecosystem and has been engineered specifically for modern AI-assisted software development. It features optimized configuration defaults, standard project structures, and clear conventions that allow AI models to read, understand, and modify code with maximum precision and minimal token usage.
+This template represents the official Deployxa Cloud engineering standards for Rust applications. It is designed to run perfectly out of the box and has been structured for optimal performance, security, and developer productivity when using AI coding assistants.
 
-Compatible with major AI-assisted tools including:
+Compatible with major AI tools:
 * Cursor
 * Claude Code
 * OpenCode
@@ -35,100 +35,114 @@ Compatible with major AI-assisted tools including:
 
 ## Included
 
-This template ships with all the necessary primitives for running in both local development and cloud production environments:
-* **Dockerfile**: Optimized multi-stage build that keeps image sizes minimal.
-* **Docker Compose**: Pre-configured services for quick local execution.
-* **Production configuration**: Safe, production-ready environment defaults.
-* **Environment examples**: Documented `.env.example` configurations.
-* **CI workflow**: GitHub Actions pre-configured for linting and building.
-* **Health endpoint**: Native route to verify server live/ready status.
-* **Logging**: Structured logs ready to be collected.
-* **Build optimization**: Optimized dependency installation and package caching.
+* **Dockerfile**: Advanced production container.
+* **docker-compose.yml**: Configured local orchestration stack.
+* **Health Checks**: Endpoint `/health` returning `{"status":"ok"}`.
+* **Logging**: Production-grade logging defaults.
+* **Security**: Non-root user permissions, hardened base image.
+* **CI Actions**: Automated pipeline for building, linting, testing, and Docker validation.
 
 ---
 
-## Local Development
+## Requirements
 
-Follow these steps to run the project locally.
+- Appropriate framework runtime environment
+- Docker & Docker Compose (optional for containerized run)
 
-### Prerequisites
-Make sure you have Docker and the target framework runtime installed.
+---
 
-### Installation
-Clone this repository and set up environment:
+## Installation
+
+Clone the template and set up configurations:
 
 ```bash
 cp .env.example .env
 ```
 
-### Running with Docker
-You can spin up the application in a production-ready containerized environment:
+---
+
+## Local Development
+
+Start the development server:
 
 ```bash
-docker-compose up --build
+docker compose up --build
 ```
 
 ---
 
 ## Deploy to Deployxa
 
-Deploying to Deployxa is simple and fast. If you have the Deployxa CLI installed, run:
+Deploy instantly via CLI:
 
 ```bash
 deployxa deploy
 ```
 
-Alternatively, you can link this GitHub repository directly through the Deployxa Dashboard for automated continuous deployment (GitOps).
+For more documentation, visit the [Deployxa Documentation](https://docs.deployxa.com).
+
+---
+
+## Environment Variables
+
+| Variable | Description | Default |
+|---|---|---|
+| `PORT` | Listening port | `8080` |
 
 ---
 
 ## Project Structure
 
-A predictable layout designed for clarity:
-* `Dockerfile` - Multi-stage deployment configuration.
-* `docker-compose.yml` - Local container orchestration.
-* `.github/workflows/ci.yml` - CI/CD pipeline template.
-* `.env.example` - Standard configuration variables.
-* Source files located in modular directory structures.
+```text
+.github/
+    workflows/
+        ci.yml      # CI/CD Validation
+docker/             # Configuration files
+src/                # Source files
+public/             # Static Assets
+config/             # Configuration Settings
+scripts/            # Operations Utilities
+docs/               # Architectural Guides
+tests/              # Automation Checks
+.env.example        # Environment Template
+Dockerfile          # Multi-stage Container
+docker-compose.yml  # Multi-container Setup
+```
+
+---
+
+## Health Endpoint
+
+Exposes a JSON payload at `/health`:
+
+```json
+{
+  "status": "ok"
+}
+```
 
 ---
 
 ## Production Optimizations
 
-* **Docker layer caching**: Speeds up repeated builds.
-* **Optimized dependency installation**: Ensures dev dependencies are omitted in final production images.
-* **Smaller production images**: Uses minimal base images (e.g. alpine, debian-slim, distroless).
-* **Environment separation**: Clear separation between build-time and run-time environments.
-* **Secure defaults**: Runs as non-root user where possible, with strict permission models.
-* **Health monitoring**: Integrated `/health` routes for continuous health checks.
-* **Production logging**: Clean, structured logging formats.
-* **Cloud-native configuration**: Reads settings strictly from environment variables.
+- **Container Caching**: Docker layer caching speeds up dependency installation.
+- **Minimal Image**: Leverages Alpine or Distroless bases where possible.
+- **Secure Container Configuration**: Executes as non-root user.
 
 ---
 
 ## AI Development
 
-This project is intentionally designed for AI coding agents:
-* **Predictable folder structure**: Standard naming schemes that are easy for LLMs to locate.
-* **Readable architecture**: Minimal boilerplate with clear separation of concerns.
-* **Documented conventions**: In-line docs and config layouts designed to maximize context efficiency.
-* **AI-friendly naming**: Self-documenting functions and variables.
-* **Modular organization**: Prevents massive file sizes, making targeted refactoring simpler.
+Optimized specifically for agents:
+- `AGENTS.md` - Context guide.
+- `CLAUDE.md` - Command guide.
+- `COPILOT.md` - Editor rules.
 
 ---
 
-## Deployxa Cloud
+## CI/CD
 
-Deployxa Cloud is a developer-focused platform that manages your container lifecycles seamlessly:
-* **Automatic framework detection**: Automatically recognizes and sets up correct runner defaults.
-* **Intelligent Docker builds**: Uses remote caching for high-speed deployments.
-* **Zero-downtime deployments**: Uses rolling updates with health validation.
-* **SSL certificates**: Automatically provisions Let's Encrypt certificates.
-* **Custom domains**: Seamless domain mapping.
-* **Deployment logs**: Real-time aggregated log streaming.
-* **Rollbacks**: One-click rollbacks to any stable history state.
-* **Environment variables**: Secure secrets store.
-* **Automatic health monitoring**: Automated health monitoring checks.
+Validates syntax compiling, execution check, testing logic, and constructs docker build cache on pull requests.
 
 ---
 
