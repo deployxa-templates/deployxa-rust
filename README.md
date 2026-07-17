@@ -6,7 +6,7 @@ Production-ready Rust template optimized for AI-assisted development and Deployx
 
 Deploy this production-ready template directly to Deployxa Cloud.
 
-[![Deploy with Deployxa](branding/deploy-button.svg)](https://deployxa.com/new?template=rust&framework=rust&repo=https://github.com/deployxa-templates/deployxa-rust&branch=main&source=github&campaign=official-template)
+[![Deploy with Deployxa](branding/deploy-button.svg)](https://deployxa.com/dashboard/new?repo=https%3A%2F%2Fgithub.com%2Fdeployxa-templates%2Fdeployxa-rust&template=rust&framework=other&branch=main&name=deployxa-rust&runtime=Rust+1.78&package_manager=cargo&build_command=cargo+build+--release&start_command=.%2Ftarget%2Frelease%2Fdeployxa-rust&dockerfile=Dockerfile&version=1.0.0&build_time=180s&image_size=80MB&env_vars=PORT%2CRUST_LOG)
 
 ### Or deploy using the CLI
 
@@ -66,9 +66,9 @@ Compatible with major AI tools:
 
 * **Dockerfile**: Advanced production multi-stage container configuration.
 * **docker-compose.yml**: Configured local orchestration stack.
-* **Health Checks**: Endpoint `/health` returning `{"status":"ok"}`.
+* **Health Checks**: Endpoint `/health` returning {"status":"ok"}.
 * **Logging**: Production-grade logging defaults.
-* **Security**: Non-root user permissions, hardened base image.
+* **Security**: Hardened base image, run as non-root user.
 * **CI Actions**: Automated pipeline for building, linting, testing, and Docker validation.
 
 ---
