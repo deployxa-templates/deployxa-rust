@@ -2,6 +2,35 @@
 
 Production-ready Rust template optimized for AI-assisted development and Deployxa Cloud.
 
+## 🚀 Deploy in Seconds
+
+Deploy this production-ready template directly to Deployxa Cloud.
+
+[![Deploy with Deployxa](branding/deploy-button.svg)](https://deployxa.com/new?template=rust&framework=rust&repo=https://github.com/deployxa-templates/deployxa-rust&branch=main&source=github&campaign=official-template)
+
+### Or deploy using the CLI
+
+Initialize connection:
+```bash
+deployxa login
+```
+
+Deploy the application:
+```bash
+deployxa deploy
+```
+
+If the repository is already linked:
+```bash
+deployxa deploy
+```
+
+If not linked yet:
+```bash
+deployxa link
+deployxa deploy
+```
+
 ---
 
 ## Why This Template?
@@ -35,7 +64,7 @@ Compatible with major AI tools:
 
 ## Included
 
-* **Dockerfile**: Advanced production container.
+* **Dockerfile**: Advanced production multi-stage container configuration.
 * **docker-compose.yml**: Configured local orchestration stack.
 * **Health Checks**: Endpoint `/health` returning `{"status":"ok"}`.
 * **Logging**: Production-grade logging defaults.
@@ -46,7 +75,7 @@ Compatible with major AI tools:
 
 ## Requirements
 
-- Appropriate framework runtime environment
+- Rust 1.70+
 - Docker & Docker Compose (optional for containerized run)
 
 ---
@@ -71,23 +100,15 @@ docker compose up --build
 
 ---
 
-## Deploy to Deployxa
+## Resources & Links
 
-Deploy instantly via CLI:
-
-```bash
-deployxa deploy
-```
-
-For more documentation, visit the [Deployxa Documentation](https://docs.deployxa.com).
-
----
-
-## Environment Variables
-
-| Variable | Description | Default |
-|---|---|---|
-| `PORT` | Listening port | `8080` |
+* [Deployxa Website](https://deployxa.com)
+* [Deployxa Documentation](https://docs.deployxa.com)
+* [Deployxa CLI Repository](https://github.com/deployxa-project/deployxa-cli)
+* [Deployxa Dashboard](https://dash.deployxa.com)
+* [Deployxa Templates Catalog](https://deployxa.com/templates)
+* [Deployxa Community Discord](https://discord.gg/deployxa)
+* [Deployxa Templates GitHub Organization](https://github.com/deployxa-templates)
 
 ---
 
@@ -97,6 +118,10 @@ For more documentation, visit the [Deployxa Documentation](https://docs.deployxa
 .github/
     workflows/
         ci.yml      # CI/CD Validation
+branding/
+    deploy-button.svg       # Deploy Button
+    deploy-button-dark.svg  # Dark Deploy Button
+    deploy-button-light.svg # Light Deploy Button
 docker/             # Configuration files
 src/                # Source files
 public/             # Static Assets

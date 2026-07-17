@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="200" height="40" viewBox="0 0 200 40" fill="none">
+  <rect width="200" height="40" rx="8" fill="#ffffff" />
+  <rect x="0.5" y="0.5" width="199" height="39" rx="7.5" stroke="#e2e8f0" stroke-width="1" />
+  <g transform="translate(14, 11) scale(0.7)">
+    <path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96z" fill="#4f46e5" />
+  </g>
+  <text x="36" y="25" fill="#0f172a" font-family="-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif" font-size="12" font-weight="600" letter-spacing="0.2">Deploy with Deployxa</text>
+  <path d="M172 23 L182 13 M182 13 L174 13 M182 13 L182 21" stroke="#4f46e5" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+</svg>
